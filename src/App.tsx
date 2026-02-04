@@ -14,6 +14,9 @@ import { Business } from './pages/Business';
 import { Residential } from './pages/Residential';
 import { Unique } from './pages/Unique';
 import { Contact } from './pages/Contact';
+import { WorkshopLarEquilibrado } from './pages/WorkshopLarEquilibrado';
+import { WorkshopSuccess } from './pages/WorkshopSuccess';
+import { WorkshopCancel } from './pages/WorkshopCancel';
 
 // Scroll to top component
 function ScrollToTop() {
@@ -44,6 +47,9 @@ function App() {
               <Route path="/residencias" element={<Residential />} />
               <Route path="/unico" element={<Unique />} />
               <Route path="/contactos" element={<Contact />} />
+              <Route path="/workshop-lar-equilibrado" element={<WorkshopLarEquilibrado />} />
+              <Route path="/workshop/sucesso" element={<WorkshopSuccess />} />
+              <Route path="/workshop/cancelado" element={<WorkshopCancel />} />
             </Routes>
           </main>
           

@@ -100,6 +100,8 @@ src/
 6. **Residências** - Serviços para lares, pacotes familiares
 7. **Único em Portugal** - Página de autoridade e diferenciação
 8. **Contactos** - Formulário, WhatsApp, informações
+9. **Workshop Lar Equilibrado** - Página dedicada com sistema de inscrição e pagamento
+10. **Confirmação** - Páginas de sucesso e cancelamento de inscrição
 
 ## ✨ Funcionalidades Especiais
 
@@ -109,6 +111,18 @@ src/
 - Resultado personalizado
 - Integração com WhatsApp
 - Lead capture completo
+
+### Sistema de Workshops com Stripe
+- **Inscrições online** via Stripe Payment Links
+- **Pagamentos seguros** processados pelo Stripe
+- **Sem backend necessário** - solução serverless
+- **Emails automáticos** de confirmação
+- **Gestão simples** de inscritos via Stripe Dashboard
+- Página dedicada para Workshop Lar Equilibrado (21/02/2026)
+- Páginas de confirmação (sucesso/cancelamento)
+- Banner destacado na página de Formações
+
+📋 **Documentação completa**: Ver `WORKSHOP_STRIPE_SETUP.md`
 
 ### WhatsApp Integration
 - Botão flutuante sempre visível
@@ -129,6 +143,33 @@ src/
 - `components.json` - Configuração do Shadcn/ui
 - `vite.config.ts` - Configuração do Vite com path aliases
 - `tsconfig.json` - Configuração do TypeScript
+
+## 🎓 Workshop Lar Equilibrado
+
+Sistema completo de inscrição e pagamento para o workshop de **Limpeza Ecológica, Feng Shui e Aromaterapia**.
+
+### Configuração do Stripe
+
+Para configurar o sistema de pagamento:
+
+1. Consulte a documentação completa: **`WORKSHOP_STRIPE_SETUP.md`**
+2. Crie uma conta Stripe em [stripe.com](https://stripe.com)
+3. Configure o Payment Link seguindo o guia passo a passo
+4. Atualize o link no arquivo `src/pages/WorkshopLarEquilibrado.tsx`
+
+### Rotas do Workshop
+
+- `/workshop-lar-equilibrado` - Página principal do evento
+- `/workshop/sucesso` - Confirmação de inscrição bem-sucedida
+- `/workshop/cancelado` - Página de cancelamento
+
+### Gerenciar Inscrições
+
+Todas as inscrições são gerenciadas no **Stripe Dashboard**:
+- Ver lista de participantes
+- Exportar dados para CSV
+- Processar reembolsos
+- Enviar emails de confirmação
 
 ## 📞 Contacto
 
