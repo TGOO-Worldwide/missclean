@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Heart, Shield, Award, TrendingUp, Users, Leaf, ArrowRight } from 'lucide-react';
+import { Sparkles, Heart, Shield, Award, TrendingUp, Users, Leaf, ArrowRight, Calendar, MapPin, Euro, Zap } from 'lucide-react';
 import { ServiceCard } from '../components/ServiceCard';
 import { TestimonialCard } from '../components/TestimonialCard';
 import { CTASection } from '../components/CTASection';
@@ -200,6 +200,87 @@ export function Home() {
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Workshop Banner */}
+      <section className="py-8 bg-white">
+        <div className="container mx-auto px-4">
+          <Link 
+            to="/workshop-lar-equilibrado"
+            className="block max-w-6xl mx-auto group"
+          >
+            <div className="relative bg-gradient-to-r from-gold via-gold/95 to-teal rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 hover:scale-[1.02]">
+              {/* Animated background pattern */}
+              <div className="absolute inset-0 opacity-20">
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_white_1px,_transparent_1px)] bg-[length:24px_24px]"></div>
+              </div>
+
+              {/* Badge */}
+              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20">
+                <span className="inline-flex items-center gap-2 bg-white text-gold px-4 py-2 rounded-full font-bold text-xs sm:text-sm shadow-lg animate-pulse">
+                  <Zap className="w-4 h-4" />
+                  NOVO EVENTO
+                </span>
+              </div>
+
+              <div className="relative z-10 grid md:grid-cols-2 gap-6 md:gap-8 p-6 sm:p-8 md:p-12">
+                {/* Left: Content */}
+                <div className="flex flex-col justify-center space-y-4 sm:space-y-6 text-white">
+                  <div>
+                    <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs sm:text-sm font-semibold mb-3">
+                      <Calendar className="w-4 h-4" />
+                      21 de Fevereiro 2026
+                    </div>
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 leading-tight">
+                      Workshop Lar Equilibrado
+                    </h3>
+                    <p className="text-base sm:text-lg md:text-xl text-white/90 mb-3 sm:mb-4">
+                      Limpeza Ecológica, Feng Shui e Aromaterapia
+                    </p>
+                    <p className="text-sm sm:text-base text-white/80 leading-relaxed">
+                      Transforma a tua casa, energia e bem-estar familiar com técnicas práticas e naturais.
+                    </p>
+                  </div>
+
+                  {/* Info Pills */}
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
+                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm">
+                      <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span className="font-semibold">Aveiro</span>
+                    </div>
+                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm">
+                      <Euro className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span className="font-bold text-base sm:text-lg">35€</span>
+                    </div>
+                    <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-bold border border-white/30">
+                      VAGAS LIMITADAS
+                    </div>
+                  </div>
+
+                  {/* CTA */}
+                  <div className="pt-2">
+                    <div className="inline-flex items-center gap-2 bg-white text-gold px-5 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-sm sm:text-base group-hover:scale-105 transition-transform shadow-xl">
+                      Saber Mais e Inscrever-me
+                      <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: Image */}
+                <div className="relative order-first md:order-last">
+                  <div className="relative h-48 sm:h-64 md:h-full min-h-[250px] rounded-2xl overflow-hidden shadow-2xl">
+                    <img
+                      src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+                      alt="Workshop Lar Equilibrado"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
 
