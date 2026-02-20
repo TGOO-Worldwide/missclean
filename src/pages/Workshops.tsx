@@ -1,6 +1,6 @@
-import { BookOpen, Flower2, Briefcase, Calendar, Users, Clock, Check, ArrowRight } from 'lucide-react';
+import { BookOpen, Flower2, Briefcase, Calendar, Users, Clock, Check, ArrowRight, Sparkles, MapPin, Euro } from 'lucide-react';
 import { CTASection } from '../components/CTASection';
-import { CoverageBanner } from '../components/CoverageBanner';
+import { Link } from 'react-router-dom';
 
 export function Workshops() {
   const workshops = [
@@ -87,12 +87,108 @@ export function Workshops() {
         </div>
       </section>
 
-      {/* Destaque cobertura */}
-      <CoverageBanner />
+      {/* Featured Workshop Banner */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            {/* New Event Badge */}
+            <div className="text-center mb-8">
+              <span className="inline-flex items-center gap-2 bg-gold text-white px-6 py-2 rounded-full font-bold text-sm animate-pulse shadow-lg">
+                <Sparkles className="w-4 h-4" />
+                NOVO EVENTO
+              </span>
+            </div>
+
+            {/* Featured Card */}
+            <div className="relative bg-gradient-to-br from-gold via-gold/90 to-teal rounded-3xl shadow-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300">
+              <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12">
+                {/* Left: Image */}
+                <div className="relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+                    alt="Workshop Lar Equilibrado"
+                    className="w-full h-full object-cover rounded-2xl shadow-xl min-h-[300px]"
+                  />
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-gold px-4 py-2 rounded-full font-bold shadow-lg">
+                    VAGAS LIMITADAS
+                  </div>
+                </div>
+
+                {/* Right: Content */}
+                <div className="flex flex-col justify-center text-white space-y-6">
+                  <div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-3">
+                      Workshop Lar Equilibrado
+                    </h2>
+                    <p className="text-xl text-white/90 mb-4">
+                      Limpeza Ecológica, Feng Shui e Aromaterapia
+                    </p>
+                    <p className="text-white/80 leading-relaxed">
+                      Transforma a tua casa, a tua energia e o bem-estar da tua família! 
+                      Workshop prático com técnicas naturais e conscientes.
+                    </p>
+                  </div>
+
+                  {/* Info Grid */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-5 h-5 text-white/90" />
+                      <div>
+                        <p className="text-sm text-white/70">Data</p>
+                        <p className="font-bold">21 FEV 2026</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-5 h-5 text-white/90" />
+                      <div>
+                        <p className="text-sm text-white/70">Local</p>
+                        <p className="font-bold">Aveiro</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Euro className="w-5 h-5 text-white/90" />
+                      <div>
+                        <p className="text-sm text-white/70">Investimento</p>
+                        <p className="font-bold text-2xl">35€</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Users className="w-5 h-5 text-white/90" />
+                      <div>
+                        <p className="text-sm text-white/70">Vagas</p>
+                        <p className="font-bold">Limitadas</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div>
+                    <Link
+                      to="/workshop-lar-equilibrado"
+                      className="inline-flex items-center gap-2 bg-white text-gold px-8 py-4 rounded-full font-bold text-lg transition-all hover:scale-105 hover:shadow-2xl"
+                    >
+                      Saber Mais e Inscrever-me
+                      <ArrowRight className="w-5 h-5" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Workshops List */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-light">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-dark mb-4">
+              Outros Workshops Disponíveis
+            </h2>
+            <p className="text-xl text-gray-600">
+              Formações completas para todos os níveis
+            </p>
+          </div>
           <div className="max-w-6xl mx-auto space-y-16">
             {workshops.map((workshop, index) => {
               const Icon = workshop.icon;

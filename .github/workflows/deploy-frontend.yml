@@ -1,0 +1,96 @@
+name: Deploy Frontend to CloudPanel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build frontend
+        run: npm run build
+
+      - name: Prepare server and create backup
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            APP_DIR="${{ secrets.DEPLOY_PATH }}"
+            
+            # Criar backup da versão atual
+            if [ -d "$APP_DIR/dist" ]; then
+              echo "📦 Criando backup..."
+              BACKUP_DIR="$HOME/backups/frontend_$(date +%Y%m%d_%H%M%S)"
+              mkdir -p "$BACKUP_DIR"
+              cp -r "$APP_DIR/dist" "$BACKUP_DIR/" 2>/dev/null || true
+              echo "✅ Backup salvo em: $BACKUP_DIR"
+              
+              # Manter apenas últimos 5 backups
+              cd "$HOME/backups" && ls -t | grep "^frontend_" | tail -n +6 | xargs -r rm -rf
+            fi
+            
+            # Criar diretório se não existir
+            mkdir -p "$APP_DIR"
+            echo "📂 Diretórios preparados"
+
+      - name: Copy frontend files to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          source: "dist/*"
+          target: ${{ secrets.DEPLOY_PATH }}
+          strip_components: 0
+          rm: false
+
+      - name: Verify deployment
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            APP_DIR="${{ secrets.DEPLOY_PATH }}"
+            
+            echo "🔍 Verificando arquivos..."
+            if [ -f "$APP_DIR/dist/index.html" ]; then
+              echo "✅ index.html encontrado"
+              echo "📊 Arquivos no diretório:"
+              ls -lh "$APP_DIR/dist/" | head -20
+            else
+              echo "❌ Erro: index.html não encontrado!"
+              exit 1
+            fi
+
+      - name: Success notification
+        if: success()
+        run: |
+          echo "🎉 Deploy do frontend concluído com sucesso!"
+          echo "🌐 Acesse seu site em: https://seu-dominio.com"
+          
+      - name: Failure notification
+        if: failure()
+        run: |
+          echo "❌ Falha no deploy. Verifique os logs acima."
+          exit 1
