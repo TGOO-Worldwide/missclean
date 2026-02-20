@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin } from 'lucide-react';
 import { Logo } from '../Logo';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const WHATSAPP_NUMBER = '351913034241';
 const EMAIL = 'info@missclean.pt';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   const handleWhatsApp = () => {
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre os serviços da Miss Clean.')}`;
@@ -21,39 +23,37 @@ export function Footer() {
           <div className="space-y-4">
             <Logo className="h-16" variant="dark" />
             <p className="text-gray-400 text-sm leading-relaxed">
-              Transformamos ambientes físicos e emocionais através da limpeza ecológica,
-              aromaterapia e bem-estar. O único serviço em Portugal que alia sustentabilidade
-              e terapia.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-gold">Links Rápidos</h3>
+            <h3 className="text-lg font-semibold mb-4 text-gold">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/" className="text-gray-400 hover:text-gold transition-colors">
-                  Início
+                  {t('nav.home')}
                 </Link>
               </li>
               <li>
                 <Link to="/sobre" className="text-gray-400 hover:text-gold transition-colors">
-                  Sobre
+                  {t('nav.about')}
                 </Link>
               </li>
               <li>
                 <Link to="/servicos" className="text-gray-400 hover:text-gold transition-colors">
-                  Serviços
+                  {t('nav.services')}
                 </Link>
               </li>
               <li>
                 <Link to="/formacoes" className="text-gray-400 hover:text-gold transition-colors">
-                  Formações
+                  {t('nav.workshops')}
                 </Link>
               </li>
               <li>
                 <Link to="/unico" className="text-gray-400 hover:text-gold transition-colors">
-                  Único em Portugal
+                  {t('nav.unique')}
                 </Link>
               </li>
             </ul>
@@ -61,7 +61,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-gold">Serviços</h3>
+            <h3 className="text-lg font-semibold mb-4 text-gold">{t('footer.services')}</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/residencias" className="text-gray-400 hover:text-gold transition-colors">
@@ -93,7 +93,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-gold">Contacto</h3>
+            <h3 className="text-lg font-semibold mb-4 text-gold">{t('footer.contact')}</h3>
             <ul className="space-y-3">
               <li>
                 <button
@@ -104,7 +104,7 @@ export function Footer() {
                     <Phone className="w-4 h-4" />
                     <span>+351 913 034 241</span>
                   </div>
-                  <span className="text-xs text-gray-500 ml-6">Chamada para rede móvel nacional</span>
+                  <span className="text-xs text-gray-500 ml-6">{t('footer.mobileCallNote')}</span>
                 </button>
               </li>
               <li>
@@ -124,7 +124,7 @@ export function Footer() {
 
             {/* Social Media */}
             <div className="mt-6">
-              <h4 className="text-sm font-semibold mb-3 text-gold">Siga-nos</h4>
+              <h4 className="text-sm font-semibold mb-3 text-gold">{t('footer.followUs')}</h4>
               <div className="flex gap-3">
                 <a
                   href="https://www.instagram.com/servicos_limpeza_missclean/"
@@ -161,14 +161,14 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © {currentYear} Miss Clean. Todos os direitos reservados.
+            © {currentYear} Miss Clean. {t('footer.allRightsReserved')}
           </p>
           <div className="flex gap-6 text-sm">
             <Link to="/privacidade" className="text-gray-400 hover:text-gold transition-colors">
-              Política de Privacidade
+              {t('footer.privacyPolicy')}
             </Link>
             <Link to="/termos" className="text-gray-400 hover:text-gold transition-colors">
-              Termos de Serviço
+              {t('footer.termsOfService')}
             </Link>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { Award, Sparkles, Heart, Leaf, Users, CheckCircle2 } from 'lucide-react';
 import { CTASection } from '../components/CTASection';
+import { CoverageBanner } from '../components/CoverageBanner';
 
 export function Unique() {
   const differentials = [
@@ -106,6 +107,8 @@ export function Unique() {
           </div>
         </div>
       </section>
+
+      <CoverageBanner />
 
       {/* Main Differentials */}
       <section className="py-20 bg-white">

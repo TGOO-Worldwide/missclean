@@ -1,5 +1,6 @@
 import { Home, Heart, Baby, Dog, Flower2, Shield, Check, Star } from 'lucide-react';
 import { CTASection } from '../components/CTASection';
+import { CoverageBanner } from '../components/CoverageBanner';
 
 export function Residential() {
   const services = [
@@ -135,6 +136,8 @@ export function Residential() {
           </div>
         </div>
       </section>
+
+      <CoverageBanner />
 
       {/* Services */}
       <section className="py-20 bg-white">

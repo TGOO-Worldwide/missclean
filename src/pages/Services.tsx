@@ -1,6 +1,7 @@
 import { Leaf, Sparkles, Heart, Wind, Briefcase, Home, Check, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CTASection } from '../components/CTASection';
+import { CoverageBanner } from '../components/CoverageBanner';
 
 export function Services() {
   const services = [
@@ -108,6 +109,8 @@ export function Services() {
           </div>
         </div>
       </section>
+
+      <CoverageBanner />
 
       {/* Services List */}
       <section className="py-20">

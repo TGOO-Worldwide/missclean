@@ -79,6 +79,63 @@ interface Translations {
     portugal: string;
     learnMore: string;
     viewAll: string;
+    viewAllServices: string;
+    readMore: string;
+  };
+  coverage: {
+    servicesLine: string;
+    formationsLine: string;
+  };
+  home: {
+    uniqueBadge: string;
+    heroTitle: string;
+    heroTitleHighlight: string;
+    heroSubtitle: string;
+    heroCtaPrimary: string;
+    heroCtaSecondary: string;
+    trust100: string;
+    trust100Label: string;
+    trust5Star: string;
+    trust5StarLabel: string;
+    trust200Plus: string;
+    trust200PlusLabel: string;
+    trustUnique: string;
+    trustUniqueLabel: string;
+    uniqueInPortugal: string;
+    uniqueTitle: string;
+    uniqueDescription: string;
+    uniqueLink: string;
+    servicesTitle: string;
+    servicesSubtitle: string;
+    service1Title: string;
+    service1Desc: string;
+    service2Title: string;
+    service2Desc: string;
+    service3Title: string;
+    service3Desc: string;
+    service4Title: string;
+    service4Desc: string;
+    benefitsTitle: string;
+    benefit1Title: string;
+    benefit1Desc: string;
+    benefit2Title: string;
+    benefit2Desc: string;
+    benefit3Title: string;
+    benefit3Desc: string;
+    benefit4Title: string;
+    benefit4Desc: string;
+    benefit5Title: string;
+    benefit5Desc: string;
+    benefit6Title: string;
+    benefit6Desc: string;
+    testimonialsTitle: string;
+    testimonialsSubtitle: string;
+    faqTitle: string;
+    faqSubtitle: string;
+    ctaFinalTitle: string;
+    ctaFinalDesc: string;
+    ctaFinalButton: string;
+    ctaFinalButtonSecondary: string;
   };
 }
 
@@ -162,6 +219,63 @@ export const translations: Record<Language, Translations> = {
       portugal: 'Portugal',
       learnMore: 'Saber mais',
       viewAll: 'Ver Todos',
+      viewAllServices: 'Ver Todos os Serviços',
+      readMore: 'Ler mais',
+    },
+    coverage: {
+      servicesLine: 'Serviços disponíveis em toda a região de Aveiro.',
+      formationsLine: 'Formações e workshops em todo o país (Portugal).',
+    },
+    home: {
+      uniqueBadge: '✨ Único em Portugal',
+      heroTitle: 'Limpeza Ecológica e',
+      heroTitleHighlight: 'Terapêutica',
+      heroSubtitle: 'Transformamos ambientes físicos e emocionais através da sustentabilidade, aromaterapia e bem-estar. Mais do que limpeza — é equilíbrio e harmonia.',
+      heroCtaPrimary: 'Receber Proposta Personalizada',
+      heroCtaSecondary: 'Conhecer a Miss Clean',
+      trust100: '100%',
+      trust100Label: 'Ecológico',
+      trust5Star: '5★',
+      trust5StarLabel: 'Avaliação',
+      trust200Plus: '+200',
+      trust200PlusLabel: 'Clientes',
+      trustUnique: 'Único',
+      trustUniqueLabel: 'em Portugal',
+      uniqueInPortugal: 'O Único Serviço em Portugal',
+      uniqueTitle: 'O Único Serviço em Portugal',
+      uniqueDescription: 'Somos pioneiros na integração de limpeza ecológica com aromaterapia e harmonização terapêutica. Não fazemos apenas limpeza — transformamos espaços em ambientes de bem-estar e equilíbrio.',
+      uniqueLink: 'Descubra o que nos torna únicos',
+      servicesTitle: 'Nossos Serviços',
+      servicesSubtitle: 'Soluções completas que aliam sustentabilidade, saúde e bem-estar',
+      service1Title: 'Limpeza Ecológica',
+      service1Desc: 'Produtos biodegradáveis e naturais, seguros para pessoas, animais e meio ambiente.',
+      service2Title: 'Limpeza Terapêutica',
+      service2Desc: 'Integração de aromaterapia e técnicas de harmonização energética do espaço.',
+      service3Title: 'Aromaterapia Aplicada',
+      service3Desc: 'Sinergias personalizadas com óleos essenciais para equilíbrio emocional.',
+      service4Title: 'Sistema Rainbow',
+      service4Desc: 'Limpeza profunda com aspiração aquática, ideal para alergias e problemas respiratórios.',
+      benefitsTitle: 'Por Que Escolher a Miss Clean?',
+      benefit1Title: '100% Seguro',
+      benefit1Desc: 'Produtos naturais e biodegradáveis, seguros para toda a família e animais de estimação.',
+      benefit2Title: 'Terapêutico',
+      benefit2Desc: 'Aromaterapia e harmonização energética para o bem-estar físico e emocional.',
+      benefit3Title: 'Resultados Comprovados',
+      benefit3Desc: 'Mais de 200 clientes satisfeitos com ambientes transformados e energia renovada.',
+      benefit4Title: 'Equipa Qualificada',
+      benefit4Desc: 'Profissionais formados em limpeza ecológica, aromaterapia e harmonização de espaços.',
+      benefit5Title: 'Serviço Premium',
+      benefit5Desc: 'Atendimento personalizado e consultoria para criar o ambiente perfeito.',
+      benefit6Title: 'Sustentável',
+      benefit6Desc: 'Compromisso com o meio ambiente e práticas de responsabilidade ecológica.',
+      testimonialsTitle: 'O Que Dizem os Nossos Clientes',
+      testimonialsSubtitle: 'Histórias reais de transformação e bem-estar',
+      faqTitle: 'Perguntas Frequentes',
+      faqSubtitle: 'Tudo o que precisa saber sobre os nossos serviços',
+      ctaFinalTitle: 'Pronto para Transformar o Seu Espaço?',
+      ctaFinalDesc: 'Entre em contacto connosco e receba uma proposta personalizada para o seu lar ou empresa.',
+      ctaFinalButton: 'Falar no WhatsApp',
+      ctaFinalButtonSecondary: 'Ver Serviços',
     },
   },
   en: {
@@ -243,6 +357,63 @@ export const translations: Record<Language, Translations> = {
       portugal: 'Portugal',
       learnMore: 'Learn more',
       viewAll: 'View All',
+      viewAllServices: 'View All Services',
+      readMore: 'Read more',
+    },
+    coverage: {
+      servicesLine: 'Services available across the Aveiro region.',
+      formationsLine: 'Training and workshops across the country (Portugal).',
+    },
+    home: {
+      uniqueBadge: '✨ Unique in Portugal',
+      heroTitle: 'Ecological and',
+      heroTitleHighlight: 'Therapeutic Cleaning',
+      heroSubtitle: 'We transform physical and emotional environments through sustainability, aromatherapy, and well-being. More than cleaning — it\'s balance and harmony.',
+      heroCtaPrimary: 'Get Personalized Quote',
+      heroCtaSecondary: 'Learn About Miss Clean',
+      trust100: '100%',
+      trust100Label: 'Ecological',
+      trust5Star: '5★',
+      trust5StarLabel: 'Rating',
+      trust200Plus: '+200',
+      trust200PlusLabel: 'Clients',
+      trustUnique: 'Unique',
+      trustUniqueLabel: 'in Portugal',
+      uniqueInPortugal: 'The Only Service in Portugal',
+      uniqueTitle: 'The Only Service in Portugal',
+      uniqueDescription: 'We are pioneers in integrating ecological cleaning with aromatherapy and therapeutic harmonization. We don\'t just clean — we transform spaces into environments of well-being and balance.',
+      uniqueLink: 'Discover what makes us unique',
+      servicesTitle: 'Our Services',
+      servicesSubtitle: 'Complete solutions that combine sustainability, health, and well-being',
+      service1Title: 'Ecological Cleaning',
+      service1Desc: 'Biodegradable and natural products, safe for people, animals, and the environment.',
+      service2Title: 'Therapeutic Cleaning',
+      service2Desc: 'Integration of aromatherapy and energy harmonization techniques for spaces.',
+      service3Title: 'Applied Aromatherapy',
+      service3Desc: 'Personalized synergies with essential oils for emotional balance.',
+      service4Title: 'Rainbow System',
+      service4Desc: 'Deep cleaning with water aspiration, ideal for allergies and respiratory problems.',
+      benefitsTitle: 'Why Choose Miss Clean?',
+      benefit1Title: '100% Safe',
+      benefit1Desc: 'Natural and biodegradable products, safe for the whole family and pets.',
+      benefit2Title: 'Therapeutic',
+      benefit2Desc: 'Aromatherapy and energy harmonization for physical and emotional well-being.',
+      benefit3Title: 'Proven Results',
+      benefit3Desc: 'Over 200 satisfied clients with transformed environments and renewed energy.',
+      benefit4Title: 'Qualified Team',
+      benefit4Desc: 'Professionals trained in ecological cleaning, aromatherapy, and space harmonization.',
+      benefit5Title: 'Premium Service',
+      benefit5Desc: 'Personalized service and consulting to create the perfect environment.',
+      benefit6Title: 'Sustainable',
+      benefit6Desc: 'Commitment to the environment and ecological responsibility practices.',
+      testimonialsTitle: 'What Our Clients Say',
+      testimonialsSubtitle: 'Real stories of transformation and well-being',
+      faqTitle: 'Frequently Asked Questions',
+      faqSubtitle: 'Everything you need to know about our services',
+      ctaFinalTitle: 'Ready to Transform Your Space?',
+      ctaFinalDesc: 'Contact us and receive a personalized proposal for your home or business.',
+      ctaFinalButton: 'Chat on WhatsApp',
+      ctaFinalButtonSecondary: 'View Services',
     },
   },
 };

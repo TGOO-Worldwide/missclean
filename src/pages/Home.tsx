@@ -7,34 +7,37 @@ import { CTASection } from '../components/CTASection';
 import { FAQAccordion } from '../components/FAQAccordion';
 import { LeadQuiz } from '../components/LeadQuiz';
 import { AuthorityCertifications } from '../components/AuthorityCertifications';
+import { CoverageBanner } from '../components/CoverageBanner';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export function Home() {
   const [showQuiz, setShowQuiz] = useState(false);
+  const { t } = useLanguage();
 
   const services = [
     {
       icon: Leaf,
-      title: 'Limpeza Ecológica',
-      description: 'Produtos biodegradáveis e naturais, seguros para pessoas, animais e meio ambiente.',
+      title: t('home.service1Title'),
+      description: t('home.service1Desc'),
       link: '/servicos#ecologica'
     },
     {
       icon: Sparkles,
-      title: 'Limpeza Terapêutica',
-      description: 'Integração de aromaterapia e técnicas de harmonização energética do espaço.',
+      title: t('home.service2Title'),
+      description: t('home.service2Desc'),
       link: '/servicos#terapeutica',
       premium: true
     },
     {
       icon: Heart,
-      title: 'Aromaterapia Aplicada',
-      description: 'Sinergias personalizadas com óleos essenciais para equilíbrio emocional.',
+      title: t('home.service3Title'),
+      description: t('home.service3Desc'),
       link: '/servicos#aromaterapia'
     },
     {
       icon: Shield,
-      title: 'Sistema Rainbow',
-      description: 'Limpeza profunda com aspiração aquática, ideal para alergias e problemas respiratórios.',
+      title: t('home.service4Title'),
+      description: t('home.service4Desc'),
       link: '/servicos#rainbow'
     }
   ];
@@ -108,17 +111,16 @@ export function Home() {
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="inline-block">
               <span className="bg-gold/20 border border-gold text-gold px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm">
-                ✨ Único em Portugal
+                {t('home.uniqueBadge')}
               </span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              Limpeza Ecológica e <span className="text-gold">Terapêutica</span>
+              {t('home.heroTitle')} <span className="text-gold">{t('home.heroTitleHighlight')}</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-100 leading-relaxed max-w-3xl mx-auto">
-              Transformamos ambientes físicos e emocionais através da sustentabilidade,
-              aromaterapia e bem-estar. Mais do que limpeza — é equilíbrio e harmonia.
+              {t('home.heroSubtitle')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
@@ -126,7 +128,7 @@ export function Home() {
                 onClick={() => setShowQuiz(true)}
                 className="group flex items-center gap-2 bg-gold hover:bg-gold/90 text-white px-10 py-5 rounded-full text-lg font-semibold transition-all hover:scale-105 shadow-2xl"
               >
-                Receber Proposta Personalizada
+                {t('home.heroCtaPrimary')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               
@@ -134,27 +136,27 @@ export function Home() {
                 to="/sobre"
                 className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white hover:bg-white hover:text-gray-dark text-white px-10 py-5 rounded-full text-lg font-semibold transition-all"
               >
-                Conhecer a Miss Clean
+                {t('home.heroCtaSecondary')}
               </Link>
             </div>
 
             {/* Trust Indicators */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 max-w-3xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-bold text-gold">100%</div>
-                <div className="text-sm text-gray-300">Ecológico</div>
+                <div className="text-3xl font-bold text-gold">{t('home.trust100')}</div>
+                <div className="text-sm text-gray-300">{t('home.trust100Label')}</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gold">5★</div>
-                <div className="text-sm text-gray-300">Avaliação</div>
+                <div className="text-3xl font-bold text-gold">{t('home.trust5Star')}</div>
+                <div className="text-sm text-gray-300">{t('home.trust5StarLabel')}</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gold">+200</div>
-                <div className="text-sm text-gray-300">Clientes</div>
+                <div className="text-3xl font-bold text-gold">{t('home.trust200Plus')}</div>
+                <div className="text-sm text-gray-300">{t('home.trust200PlusLabel')}</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gold">Único</div>
-                <div className="text-sm text-gray-300">em Portugal</div>
+                <div className="text-3xl font-bold text-gold">{t('home.trustUnique')}</div>
+                <div className="text-sm text-gray-300">{t('home.trustUniqueLabel')}</div>
               </div>
             </div>
           </div>
@@ -167,6 +169,9 @@ export function Home() {
           </div>
         </div>
       </section>
+
+      {/* Destaque cobertura: Aveiro + todo o país */}
+      <CoverageBanner />
 
       {/* Quiz Modal */}
       {showQuiz && (
@@ -185,18 +190,16 @@ export function Home() {
               <Award className="w-16 h-16 text-gold mx-auto mb-4" />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-dark">
-              O Único Serviço em Portugal
+              {t('home.uniqueTitle')}
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Somos pioneiros na integração de <span className="text-gold font-semibold">limpeza ecológica</span> com{' '}
-              <span className="text-teal font-semibold">aromaterapia e harmonização terapêutica</span>.
-              Não fazemos apenas limpeza — transformamos espaços em ambientes de bem-estar e equilíbrio.
+              {t('home.uniqueDescription')}
             </p>
             <Link
               to="/unico"
               className="inline-flex items-center gap-2 text-gold font-semibold hover:gap-3 transition-all"
             >
-              Descubra o que nos torna únicos
+              {t('home.uniqueLink')}
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
@@ -289,10 +292,10 @@ export function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-dark mb-4">
-              Nossos Serviços
+              {t('home.servicesTitle')}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Soluções completas que aliam sustentabilidade, saúde e bem-estar
+              {t('home.servicesSubtitle')}
             </p>
           </div>
 
@@ -307,7 +310,7 @@ export function Home() {
               to="/servicos"
               className="inline-flex items-center gap-2 bg-gold hover:bg-gold/90 text-white px-8 py-4 rounded-full font-semibold transition-all hover:scale-105"
             >
-              Ver Todos os Serviços
+              {t('common.viewAllServices')}
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
@@ -319,7 +322,7 @@ export function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-dark mb-4">
-              Por Que Escolher a Miss Clean?
+              {t('home.benefitsTitle')}
             </h2>
           </div>
 
@@ -328,9 +331,9 @@ export function Home() {
               <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="w-8 h-8 text-gold" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-dark mb-3">100% Seguro</h3>
+              <h3 className="text-xl font-semibold text-gray-dark mb-3">{t('home.benefit1Title')}</h3>
               <p className="text-gray-600">
-                Produtos naturais e biodegradáveis, seguros para toda a família e animais de estimação.
+                {t('home.benefit1Desc')}
               </p>
             </div>
 
@@ -338,9 +341,9 @@ export function Home() {
               <div className="w-16 h-16 bg-teal/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Sparkles className="w-8 h-8 text-teal" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-dark mb-3">Terapêutico</h3>
+              <h3 className="text-xl font-semibold text-gray-dark mb-3">{t('home.benefit2Title')}</h3>
               <p className="text-gray-600">
-                Aromaterapia e harmonização energética para o bem-estar físico e emocional.
+                {t('home.benefit2Desc')}
               </p>
             </div>
 
@@ -348,9 +351,9 @@ export function Home() {
               <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <TrendingUp className="w-8 h-8 text-gold" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-dark mb-3">Resultados Comprovados</h3>
+              <h3 className="text-xl font-semibold text-gray-dark mb-3">{t('home.benefit3Title')}</h3>
               <p className="text-gray-600">
-                Mais de 200 clientes satisfeitos com ambientes transformados e energia renovada.
+                {t('home.benefit3Desc')}
               </p>
             </div>
 
@@ -358,9 +361,9 @@ export function Home() {
               <div className="w-16 h-16 bg-teal/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-teal" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-dark mb-3">Equipa Qualificada</h3>
+              <h3 className="text-xl font-semibold text-gray-dark mb-3">{t('home.benefit4Title')}</h3>
               <p className="text-gray-600">
-                Profissionais formados em limpeza ecológica, aromaterapia e harmonização de espaços.
+                {t('home.benefit4Desc')}
               </p>
             </div>
 
@@ -368,9 +371,9 @@ export function Home() {
               <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="w-8 h-8 text-gold" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-dark mb-3">Serviço Premium</h3>
+              <h3 className="text-xl font-semibold text-gray-dark mb-3">{t('home.benefit5Title')}</h3>
               <p className="text-gray-600">
-                Atendimento personalizado e consultoria para criar o ambiente perfeito.
+                {t('home.benefit5Desc')}
               </p>
             </div>
 
@@ -378,9 +381,9 @@ export function Home() {
               <div className="w-16 h-16 bg-teal/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Leaf className="w-8 h-8 text-teal" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-dark mb-3">Sustentável</h3>
+              <h3 className="text-xl font-semibold text-gray-dark mb-3">{t('home.benefit6Title')}</h3>
               <p className="text-gray-600">
-                Compromisso com o meio ambiente e práticas de responsabilidade ecológica.
+                {t('home.benefit6Desc')}
               </p>
             </div>
           </div>
@@ -395,10 +398,10 @@ export function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-dark mb-4">
-              O Que Dizem os Nossos Clientes
+              {t('home.testimonialsTitle')}
             </h2>
             <p className="text-xl text-gray-600">
-              Histórias reais de transformação e bem-estar
+              {t('home.testimonialsSubtitle')}
             </p>
           </div>
 
@@ -415,10 +418,10 @@ export function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-dark mb-4">
-              Perguntas Frequentes
+              {t('home.faqTitle')}
             </h2>
             <p className="text-xl text-gray-600">
-              Tudo o que precisa saber sobre os nossos serviços
+              {t('home.faqSubtitle')}
             </p>
           </div>
 
@@ -430,10 +433,10 @@ export function Home() {
 
       {/* Final CTA */}
       <CTASection
-        title="Pronto para Transformar o Seu Espaço?"
-        description="Entre em contacto connosco e receba uma proposta personalizada para o seu lar ou empresa."
-        primaryButtonText="Falar no WhatsApp"
-        secondaryButtonText="Ver Serviços"
+        title={t('home.ctaFinalTitle')}
+        description={t('home.ctaFinalDesc')}
+        primaryButtonText={t('home.ctaFinalButton')}
+        secondaryButtonText={t('home.ctaFinalButtonSecondary')}
         secondaryButtonLink="/servicos"
       />
     </div>

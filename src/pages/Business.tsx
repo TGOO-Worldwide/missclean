@@ -1,5 +1,6 @@
 import { Building2, TrendingUp, Users, Heart, Sparkles, Award, Check } from 'lucide-react';
 import { CTASection } from '../components/CTASection';
+import { CoverageBanner } from '../components/CoverageBanner';
 
 export function Business() {
   const services = [
@@ -102,6 +103,8 @@ export function Business() {
           </div>
         </div>
       </section>
+
+      <CoverageBanner />
 
       {/* Services */}
       <section className="py-20 bg-white">
