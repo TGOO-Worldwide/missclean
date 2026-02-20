@@ -82,6 +82,10 @@ interface Translations {
     viewAllServices: string;
     readMore: string;
   };
+  coverage: {
+    servicesLine: string;
+    formationsLine: string;
+  };
   home: {
     uniqueBadge: string;
     heroTitle: string;
@@ -218,6 +222,10 @@ export const translations: Record<Language, Translations> = {
       viewAllServices: 'Ver Todos os Serviços',
       readMore: 'Ler mais',
     },
+    coverage: {
+      servicesLine: 'Serviços disponíveis em toda a região de Aveiro.',
+      formationsLine: 'Formações e workshops em todo o país (Portugal).',
+    },
     home: {
       uniqueBadge: '✨ Único em Portugal',
       heroTitle: 'Limpeza Ecológica e',
@@ -351,6 +359,10 @@ export const translations: Record<Language, Translations> = {
       viewAll: 'View All',
       viewAllServices: 'View All Services',
       readMore: 'Read more',
+    },
+    coverage: {
+      servicesLine: 'Services available across the Aveiro region.',
+      formationsLine: 'Training and workshops across the country (Portugal).',
     },
     home: {
       uniqueBadge: '✨ Unique in Portugal',

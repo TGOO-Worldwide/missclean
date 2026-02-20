@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { CoverageBanner } from '../components/CoverageBanner';
 
 const WHATSAPP_NUMBER = '351913034241';
 const EMAIL = 'info@missclean.pt';
@@ -74,6 +75,8 @@ Mensagem: ${formData.message || '[Mensagem]'}`;
           </div>
         </div>
       </section>
+
+      <CoverageBanner />
 
       {/* Contact Methods */}
       <section className="py-20 bg-white">

@@ -1,5 +1,6 @@
 import { BookOpen, Flower2, Briefcase, Calendar, Users, Clock, Check, ArrowRight } from 'lucide-react';
 import { CTASection } from '../components/CTASection';
+import { CoverageBanner } from '../components/CoverageBanner';
 
 export function Workshops() {
   const workshops = [
@@ -85,6 +86,9 @@ export function Workshops() {
           </div>
         </div>
       </section>
+
+      {/* Destaque cobertura */}
+      <CoverageBanner />
 
       {/* Workshops List */}
       <section className="py-20">

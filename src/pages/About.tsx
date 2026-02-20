@@ -1,6 +1,7 @@
 import { Heart, Target, Eye, Award, Sparkles, Users } from 'lucide-react';
 import { CTASection } from '../components/CTASection';
 import { AuthorityCertifications } from '../components/AuthorityCertifications';
+import { CoverageBanner } from '../components/CoverageBanner';
 
 export function About() {
   return (
@@ -21,6 +22,9 @@ export function About() {
           </div>
         </div>
       </section>
+
+      {/* Destaque cobertura */}
+      <CoverageBanner />
 
       {/* Story */}
       <section className="py-20 bg-white">
