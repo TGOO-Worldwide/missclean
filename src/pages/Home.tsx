@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Heart, Shield, Award, TrendingUp, Users, Leaf, ArrowRight, Calendar, MapPin, Euro, Zap } from 'lucide-react';
+import { Sparkles, Heart, Shield, Award, TrendingUp, Users, Leaf, ArrowRight, Calendar, MapPin, Euro, Zap, BookOpen, Flower2, Briefcase } from 'lucide-react';
 import { ServiceCard } from '../components/ServiceCard';
 import { TestimonialCard } from '../components/TestimonialCard';
 import { CTASection } from '../components/CTASection';
@@ -210,7 +210,7 @@ export function Home() {
       <section className="py-8 bg-white">
         <div className="container mx-auto px-4">
           <Link 
-            to="/workshop-lar-equilibrado"
+            to="/formacoes"
             className="block max-w-6xl mx-auto group"
           >
             <div className="relative bg-gradient-to-r from-gold via-gold/95 to-teal rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 hover:scale-[1.02]">
@@ -223,7 +223,7 @@ export function Home() {
               <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20">
                 <span className="inline-flex items-center gap-2 bg-white text-gold px-4 py-2 rounded-full font-bold text-xs sm:text-sm shadow-lg animate-pulse">
                   <Zap className="w-4 h-4" />
-                  NOVO EVENTO
+                  Formações & Workshops
                 </span>
               </div>
 
@@ -231,40 +231,37 @@ export function Home() {
                 {/* Left: Content */}
                 <div className="flex flex-col justify-center space-y-4 sm:space-y-6 text-white">
                   <div>
-                    <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs sm:text-sm font-semibold mb-3">
-                      <Calendar className="w-4 h-4" />
-                      21 de Fevereiro 2026
-                    </div>
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 leading-tight">
-                      Workshop Lar Equilibrado
+                      Outros Workshops Disponíveis
                     </h3>
                     <p className="text-base sm:text-lg md:text-xl text-white/90 mb-3 sm:mb-4">
-                      Limpeza Ecológica, Feng Shui e Aromaterapia
+                      Formações completas para todos os níveis
                     </p>
                     <p className="text-sm sm:text-base text-white/80 leading-relaxed">
-                      Transforma a tua casa, energia e bem-estar familiar com técnicas práticas e naturais.
+                      Descobre os nossos workshops de Limpeza Ecológica e Terapêutica, Aromaterapia Doméstica e formações profissionalizantes para quem quer ir mais longe.
                     </p>
                   </div>
 
-                  {/* Info Pills */}
+                  {/* Info Pills - principais tipos de workshop */}
                   <div className="flex flex-wrap gap-2 sm:gap-3">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm">
-                      <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
-                      <span className="font-semibold">Aveiro</span>
+                      <BookOpen className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span className="font-semibold">Limpeza Ecológica e Terapêutica</span>
                     </div>
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm">
-                      <Euro className="w-3 h-3 sm:w-4 sm:h-4" />
-                      <span className="font-bold text-base sm:text-lg">35€</span>
+                      <Flower2 className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span className="font-semibold">Aromaterapia Doméstica</span>
                     </div>
                     <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-bold border border-white/30">
-                      VAGAS LIMITADAS
+                      <Briefcase className="w-3 h-3 sm:w-4 sm:h-4" />
+                      Formação Profissionalizante
                     </div>
                   </div>
 
                   {/* CTA */}
                   <div className="pt-2">
                     <div className="inline-flex items-center gap-2 bg-white text-gold px-5 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-sm sm:text-base group-hover:scale-105 transition-transform shadow-xl">
-                      Saber Mais e Inscrever-me
+                      Ver todos os workshops
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
