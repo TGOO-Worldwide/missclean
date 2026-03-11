@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Heart, Shield, Award, TrendingUp, Users, Leaf, ArrowRight, Calendar, MapPin, Euro, Zap, BookOpen, Flower2, Briefcase } from 'lucide-react';
+import { Sparkles, Heart, Shield, Award, TrendingUp, Users, Leaf, ArrowRight, Calendar, MapPin, Euro, Zap, BookOpen, Flower2, Briefcase, Star, Check } from 'lucide-react';
 import { ServiceCard } from '../components/ServiceCard';
 import { TestimonialCard } from '../components/TestimonialCard';
 import { CTASection } from '../components/CTASection';
@@ -206,11 +206,11 @@ export function Home() {
         </div>
       </section>
 
-      {/* Workshop Banner */}
+      {/* 21 Dias com Miss Clean Banner */}
       <section className="py-8 bg-white">
         <div className="container mx-auto px-4">
           <Link 
-            to="/formacoes"
+            to="/servicos"
             className="block max-w-6xl mx-auto group"
           >
             <div className="relative bg-gradient-to-r from-gold via-gold/95 to-teal rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 hover:scale-[1.02]">
@@ -222,8 +222,8 @@ export function Home() {
               {/* Badge */}
               <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20">
                 <span className="inline-flex items-center gap-2 bg-white text-gold px-4 py-2 rounded-full font-bold text-xs sm:text-sm shadow-lg animate-pulse">
-                  <Zap className="w-4 h-4" />
-                  Formações & Workshops
+                  <Star className="w-4 h-4" />
+                  PROGRAMA EXCLUSIVO
                 </span>
               </div>
 
@@ -232,36 +232,44 @@ export function Home() {
                 <div className="flex flex-col justify-center space-y-4 sm:space-y-6 text-white">
                   <div>
                     <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 leading-tight">
-                      Outros Workshops Disponíveis
+                      21 Dias com Miss Clean
                     </h3>
                     <p className="text-base sm:text-lg md:text-xl text-white/90 mb-3 sm:mb-4">
-                      Formações completas para todos os níveis
+                      Programa de Limpeza Ecológica e Harmonização de Espaços
                     </p>
                     <p className="text-sm sm:text-base text-white/80 leading-relaxed">
-                      Descobre os nossos workshops de Limpeza Ecológica e Terapêutica, Aromaterapia Doméstica e formações profissionalizantes para quem quer ir mais longe.
+                      Transforme o seu espaço em apenas 21 dias através de limpeza ecológica, organização e harmonização com aromaterapia.
                     </p>
                   </div>
 
-                  {/* Info Pills - principais tipos de workshop */}
+                  {/* Benefits Pills */}
                   <div className="flex flex-wrap gap-2 sm:gap-3">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm">
-                      <BookOpen className="w-3 h-3 sm:w-4 sm:h-4" />
-                      <span className="font-semibold">Limpeza Ecológica e Terapêutica</span>
+                      <Check className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span className="font-semibold">Limpeza Ecológica</span>
                     </div>
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm">
-                      <Flower2 className="w-3 h-3 sm:w-4 sm:h-4" />
-                      <span className="font-semibold">Aromaterapia Doméstica</span>
+                      <Check className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span className="font-semibold">Organização</span>
                     </div>
                     <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-bold border border-white/30">
-                      <Briefcase className="w-3 h-3 sm:w-4 sm:h-4" />
-                      Formação Profissionalizante
+                      <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+                      21 Dias de Acompanhamento
+                    </div>
+                  </div>
+
+                  {/* Target audience */}
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
+                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm">
+                      <Users className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span className="font-semibold">Empresas & Famílias</span>
                     </div>
                   </div>
 
                   {/* CTA */}
                   <div className="pt-2">
                     <div className="inline-flex items-center gap-2 bg-white text-gold px-5 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-sm sm:text-base group-hover:scale-105 transition-transform shadow-xl">
-                      Ver todos os workshops
+                      Saber Mais e Solicitar
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
@@ -272,7 +280,7 @@ export function Home() {
                   <div className="relative h-48 sm:h-64 md:h-full min-h-[250px] rounded-2xl overflow-hidden shadow-2xl">
                     <img
                       src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
-                      alt="Workshop Lar Equilibrado"
+                      alt="21 Dias com Miss Clean"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
