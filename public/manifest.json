@@ -1,0 +1,24 @@
+{
+  "name": "MissClean",
+  "short_name": "MissClean",
+  "description": "Limpeza Ecológica e Terapêutica. Transformamos ambientes físicos e emocionais com sustentabilidade, aromaterapia e bem-estar.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAFA",
+  "theme_color": "#D4AF37",
+  "lang": "pt",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/app.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}
