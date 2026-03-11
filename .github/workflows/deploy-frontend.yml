@@ -63,6 +63,48 @@ jobs:
           strip_components: 0
           rm: false
 
+      - name: Configure Nginx for SPA routing
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            VHOST_FILE="${{ secrets.NGINX_VHOST_PATH }}"
+
+            if [ -z "$VHOST_FILE" ]; then
+              echo "⚠️  Secret NGINX_VHOST_PATH não configurado."
+              echo "    Configure manualmente no CloudPanel:"
+              echo "    Sites > missclean.pt > Vhost"
+              echo "    Altere: try_files \$uri \$uri/ =404;"
+              echo "    Para:   try_files \$uri \$uri/ /index.html;"
+              exit 0
+            fi
+
+            if [ ! -f "$VHOST_FILE" ]; then
+              echo "⚠️  Arquivo vhost não encontrado: $VHOST_FILE"
+              exit 0
+            fi
+
+            # Backup do vhost atual
+            sudo cp "$VHOST_FILE" "$VHOST_FILE.bak" 2>/dev/null || true
+
+            # Garante que o fallback SPA está correto
+            if grep -q "try_files.*=404" "$VHOST_FILE"; then
+              sudo sed -i 's|try_files \$uri \$uri/ =404;|try_files \$uri \$uri/ /index.html;|g' "$VHOST_FILE"
+              echo "✅ Fallback SPA aplicado no Nginx"
+            elif grep -q "try_files.*index.html" "$VHOST_FILE"; then
+              echo "✅ Fallback SPA já configurado"
+            else
+              echo "⚠️  Padrão try_files não reconhecido — verifique o vhost manualmente"
+            fi
+
+            # Testa e recarrega o Nginx
+            sudo nginx -t 2>&1 && sudo systemctl reload nginx \
+              && echo "✅ Nginx recarregado com sucesso" \
+              || echo "⚠️  Falha ao recarregar Nginx — verifique os logs"
+
       - name: Verify deployment
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -87,7 +129,7 @@ jobs:
         if: success()
         run: |
           echo "🎉 Deploy do frontend concluído com sucesso!"
-          echo "🌐 Acesse seu site em: https://seu-dominio.com"
+          echo "🌐 Acesse seu site em: https://missclean.pt"
           
       - name: Failure notification
         if: failure()

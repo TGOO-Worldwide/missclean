@@ -124,6 +124,44 @@ Site Type: Node.js
 - Verifique se `dist/index.html` existe no servidor
 - Veja logs: `tail -f ~/logs/nginx_error.log`
 
+### Rotas diretas retornam 404 (ex: `https://missclean.pt/servicos`)
+
+O site é uma SPA (Single Page Application) com React Router. O Nginx precisa
+redirecionar todas as rotas para o `index.html` — caso contrário, acessar
+uma rota diretamente resulta em 404.
+
+#### Opção A — Corrigir no CloudPanel (recomendado, única vez)
+
+1. Acesse o painel CloudPanel como administrador
+2. Vá em **Sites** → **missclean.pt** → **Vhost**
+3. Localize o bloco `location /` e altere:
+   ```nginx
+   # ANTES (gerado automaticamente pelo CloudPanel):
+   location / {
+       try_files $uri $uri/ =404;
+   }
+
+   # DEPOIS (correto para SPA):
+   location / {
+       try_files $uri $uri/ /index.html;
+   }
+   ```
+4. Salve e o Nginx será recarregado automaticamente
+
+#### Opção B — Automatizar via workflow (requer permissão sudo no servidor)
+
+1. Descubra o caminho do arquivo vhost do site no servidor:
+   ```bash
+   ls /etc/nginx/sites-enabled/
+   # Provavelmente: /etc/nginx/sites-enabled/missclean.pt.conf
+   ```
+2. Adicione o secret `NGINX_VHOST_PATH` no repositório GitHub:
+   - **Repositório** → Settings → Secrets → Actions → New repository secret
+   - Nome: `NGINX_VHOST_PATH`
+   - Valor: `/etc/nginx/sites-enabled/missclean.pt.conf`
+3. Certifique-se que o usuário SSH tem permissão `sudo nginx -t` e `sudo systemctl reload nginx`
+4. O próximo deploy aplicará a configuração automaticamente
+
 ---
 
 ## 📚 Documentação Completa
