@@ -8,6 +8,7 @@ import { FAQAccordion } from '../components/FAQAccordion';
 import { LeadQuiz } from '../components/LeadQuiz';
 import { AuthorityCertifications } from '../components/AuthorityCertifications';
 import { CoverageBanner } from '../components/CoverageBanner';
+import { WorkshopRitualDestaqueBanner } from '../components/WorkshopRitualDestaqueBanner';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export function Home() {
@@ -172,6 +173,9 @@ export function Home() {
 
       {/* Destaque cobertura: Aveiro + todo o país */}
       <CoverageBanner />
+
+      {/* Destaque workshop: Ritual de Beleza Natural */}
+      <WorkshopRitualDestaqueBanner />
 
       {/* Quiz Modal */}
       {showQuiz && (

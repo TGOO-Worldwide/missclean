@@ -1,5 +1,6 @@
-import { BookOpen, Flower2, Briefcase, Calendar, Users, Clock, Check, ArrowRight, Sparkles, MapPin, Euro } from 'lucide-react';
+import { BookOpen, Flower2, Briefcase, Calendar, Users, Clock, Check, ArrowRight, MapPin, Euro } from 'lucide-react';
 import { CTASection } from '../components/CTASection';
+import { WorkshopRitualDestaqueBanner } from '../components/WorkshopRitualDestaqueBanner';
 import { Link } from 'react-router-dom';
 
 export function Workshops() {
@@ -62,6 +63,12 @@ export function Workshops() {
   ];
 
   const upcomingDates = [
+    {
+      workshop: 'Ritual de Beleza Natural',
+      date: '23 de Maio · 14:30',
+      location: 'Porto · Av. de França',
+      spots: 12,
+    },
     { workshop: 'Limpeza Ecológica', date: '15 de Novembro', location: 'Lisboa', spots: 5 },
     { workshop: 'Aromaterapia Doméstica', date: '22 de Novembro', location: 'Porto', spots: 3 },
     { workshop: 'Profissionalizante', date: '29-30 de Novembro', location: 'Lisboa', spots: 2 },
@@ -87,6 +94,7 @@ export function Workshops() {
         </div>
       </section>
 
+      <WorkshopRitualDestaqueBanner />
 
       {/* Workshops List */}
       <section className="py-20 bg-gray-light">

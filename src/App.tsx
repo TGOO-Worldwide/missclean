@@ -15,6 +15,7 @@ import { Residential } from './pages/Residential';
 import { Unique } from './pages/Unique';
 import { Contact } from './pages/Contact';
 import { WorkshopLarEquilibrado } from './pages/WorkshopLarEquilibrado';
+import { WorkshopRitualBelezaNatural } from './pages/WorkshopRitualBelezaNatural';
 import { WorkshopSuccess } from './pages/WorkshopSuccess';
 import { WorkshopCancel } from './pages/WorkshopCancel';
 
@@ -47,6 +48,7 @@ function App() {
               <Route path="/unico" element={<Unique />} />
               <Route path="/contactos" element={<Contact />} />
               <Route path="/workshop-lar-equilibrado" element={<WorkshopLarEquilibrado />} />
+              <Route path="/workshop-ritual-beleza-natural" element={<WorkshopRitualBelezaNatural />} />
               <Route path="/workshop/sucesso" element={<WorkshopSuccess />} />
               <Route path="/workshop/cancelado" element={<WorkshopCancel />} />
             </Routes>
