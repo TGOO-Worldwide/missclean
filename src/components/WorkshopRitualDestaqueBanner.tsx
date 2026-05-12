@@ -25,7 +25,7 @@ export function WorkshopRitualDestaqueBanner() {
                   className="w-full h-full object-cover rounded-2xl shadow-xl min-h-[280px]"
                 />
                 <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm text-gold px-4 py-2 rounded-full font-bold shadow-lg">
-                  Porto · 14:30
+                  Porto · 18:00
                 </div>
               </div>
 
@@ -58,7 +58,7 @@ export function WorkshopRitualDestaqueBanner() {
                     <Clock className="w-5 h-5 text-white/90 shrink-0" />
                     <div>
                       <p className="text-white/70">Horário</p>
-                      <p className="font-bold">14:30</p>
+                      <p className="font-bold">18:00</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-2 sm:col-span-2">

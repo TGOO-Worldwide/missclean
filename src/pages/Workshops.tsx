@@ -65,7 +65,7 @@ export function Workshops() {
   const upcomingDates = [
     {
       workshop: 'Ritual de Beleza Natural',
-      date: '23 de Maio · 14:30',
+      date: '23 de Maio · 18:00',
       location: 'Porto · Av. de França',
       spots: 12,
     },
