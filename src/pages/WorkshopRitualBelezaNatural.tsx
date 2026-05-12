@@ -88,9 +88,16 @@ export function WorkshopRitualBelezaNatural() {
         <div className="container mx-auto px-4 py-6 md:py-8">
           <div className="max-w-6xl mx-auto overflow-hidden rounded-2xl shadow-2xl ring-1 ring-gray-200/80">
             <img
-              src="/workshop-porto.jpeg"
+              src="/workshop-porto18.jpeg"
               alt="Workshop Ritual de Beleza Natural — Porto"
-              className="w-full h-auto object-cover max-h-[min(70vh,560px)] object-center"
+              className="hidden md:block w-full h-auto object-cover max-h-[min(70vh,560px)] object-center"
+              loading="eager"
+              decoding="async"
+            />
+            <img
+              src="/workshop-mobile18.jpeg"
+              alt="Workshop Ritual de Beleza Natural — Porto"
+              className="md:hidden w-full h-auto object-cover max-h-[min(70vh,560px)] object-center"
               loading="eager"
               decoding="async"
             />

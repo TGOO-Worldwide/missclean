@@ -91,14 +91,14 @@ export function WorkshopRitualDestaqueBanner() {
               aria-label="Workshop Ritual de Beleza Natural — ver página do evento"
             >
               <img
-                src="/workshop-porto.jpeg"
+                src="/workshop-porto18.jpeg"
                 alt="Workshop Ritual de Beleza Natural — Porto"
                 className="hidden md:block w-full h-auto object-cover"
                 loading="lazy"
                 decoding="async"
               />
               <img
-                src="/workshop-mobile.jpeg"
+                src="/workshop-mobile18.jpeg"
                 alt="Workshop Ritual de Beleza Natural — Porto"
                 className="md:hidden w-full h-auto object-cover"
                 loading="lazy"
