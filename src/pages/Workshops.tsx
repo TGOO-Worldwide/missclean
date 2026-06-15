@@ -1,7 +1,5 @@
 import { BookOpen, Flower2, Briefcase, Calendar, Users, Clock, Check, ArrowRight, MapPin, Euro } from 'lucide-react';
 import { CTASection } from '../components/CTASection';
-import { WorkshopRitualDestaqueBanner } from '../components/WorkshopRitualDestaqueBanner';
-import { Link } from 'react-router-dom';
 
 export function Workshops() {
   const workshops = [
@@ -63,12 +61,6 @@ export function Workshops() {
   ];
 
   const upcomingDates = [
-    {
-      workshop: 'Ritual de Beleza Natural',
-      date: '23 de Maio · 18:00',
-      location: 'Porto · Av. de França',
-      spots: 12,
-    },
     { workshop: 'Limpeza Ecológica', date: '15 de Novembro', location: 'Lisboa', spots: 5 },
     { workshop: 'Aromaterapia Doméstica', date: '22 de Novembro', location: 'Porto', spots: 3 },
     { workshop: 'Profissionalizante', date: '29-30 de Novembro', location: 'Lisboa', spots: 2 },
@@ -94,14 +86,12 @@ export function Workshops() {
         </div>
       </section>
 
-      <WorkshopRitualDestaqueBanner />
-
       {/* Workshops List */}
       <section className="py-20 bg-gray-light">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-dark mb-4">
-              Outros Workshops Disponíveis
+              Workshops Disponíveis
             </h2>
             <p className="text-xl text-gray-600">
               Formações completas para todos os níveis
