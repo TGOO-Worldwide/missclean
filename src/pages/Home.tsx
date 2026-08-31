@@ -173,6 +173,30 @@ export function Home() {
       {/* Destaque cobertura: Aveiro + todo o país */}
       <CoverageBanner />
 
+      {/* Video — trabalho Miss Clean */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center space-y-4 mb-10">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-dark">
+              {t('home.videoTitle')}
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              {t('home.videoSubtitle')}
+            </p>
+          </div>
+          <div className="mx-auto w-full max-w-[320px] sm:max-w-[360px]">
+            <video
+              className="w-full rounded-2xl shadow-2xl ring-1 ring-gold/20 bg-gray-dark aspect-[9/16] object-cover"
+              src="/videos/missclean-reel.mp4"
+              controls
+              playsInline
+              preload="metadata"
+              aria-label={t('home.videoTitle')}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Quiz Modal */}
       {showQuiz && (
         <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">

@@ -105,6 +105,8 @@ interface Translations {
     uniqueTitle: string;
     uniqueDescription: string;
     uniqueLink: string;
+    videoTitle: string;
+    videoSubtitle: string;
     servicesTitle: string;
     servicesSubtitle: string;
     service1Title: string;
@@ -245,6 +247,8 @@ export const translations: Record<Language, Translations> = {
       uniqueTitle: 'O Único Serviço em Portugal',
       uniqueDescription: 'Somos pioneiros na integração de limpeza ecológica com aromaterapia e harmonização terapêutica. Não fazemos apenas limpeza — transformamos espaços em ambientes de bem-estar e equilíbrio.',
       uniqueLink: 'Descubra o que nos torna únicos',
+      videoTitle: 'Veja o Nosso Trabalho',
+      videoSubtitle: 'Um olhar sobre a limpeza ecológica e terapêutica da Miss Clean.',
       servicesTitle: 'Nossos Serviços',
       servicesSubtitle: 'Soluções completas que aliam sustentabilidade, saúde e bem-estar',
       service1Title: 'Limpeza Ecológica',
@@ -383,6 +387,8 @@ export const translations: Record<Language, Translations> = {
       uniqueTitle: 'The Only Service in Portugal',
       uniqueDescription: 'We are pioneers in integrating ecological cleaning with aromatherapy and therapeutic harmonization. We don\'t just clean — we transform spaces into environments of well-being and balance.',
       uniqueLink: 'Discover what makes us unique',
+      videoTitle: 'See Our Work',
+      videoSubtitle: 'A glimpse of Miss Clean\'s ecological and therapeutic cleaning.',
       servicesTitle: 'Our Services',
       servicesSubtitle: 'Complete solutions that combine sustainability, health, and well-being',
       service1Title: 'Ecological Cleaning',
