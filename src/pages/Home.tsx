@@ -184,15 +184,27 @@ export function Home() {
               {t('home.videoSubtitle')}
             </p>
           </div>
-          <div className="mx-auto w-full max-w-[320px] sm:max-w-[360px]">
-            <video
-              className="w-full rounded-2xl shadow-2xl ring-1 ring-gold/20 bg-gray-dark aspect-[9/16] object-cover"
-              src="/videos/missclean-reel.mp4"
-              controls
-              playsInline
-              preload="metadata"
-              aria-label={t('home.videoTitle')}
-            />
+          <div className="mx-auto flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center max-w-3xl">
+            <div className="w-full max-w-[280px] sm:max-w-[300px]">
+              <video
+                className="w-full rounded-2xl shadow-2xl ring-1 ring-gold/20 bg-gray-dark aspect-[9/16] object-cover"
+                src="/videos/missclean-reel.mp4"
+                controls
+                playsInline
+                preload="metadata"
+                aria-label={`${t('home.videoTitle')} 1`}
+              />
+            </div>
+            <div className="w-full max-w-[280px] sm:max-w-[300px]">
+              <video
+                className="w-full rounded-2xl shadow-2xl ring-1 ring-gold/20 bg-gray-dark aspect-[9/16] object-cover"
+                src="/videos/missclean-reel-2.mp4"
+                controls
+                playsInline
+                preload="metadata"
+                aria-label={`${t('home.videoTitle')} 2`}
+              />
+            </div>
           </div>
         </div>
       </section>
